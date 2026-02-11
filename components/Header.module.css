@@ -1,0 +1,87 @@
+.header {
+   position: fixed;
+   bottom: 25px;
+   left: 20%;
+   right: 20%;
+   z-index: 1000;
+
+   /* початковий стан — заховано вниз */
+   transform: translateY(calc(100% + 25px));
+   transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+
+   pointer-events: none;
+   /* щоб не заважав клікам, коли прихований */
+}
+
+.header.visible {
+   transform: translateY(0);
+   pointer-events: auto;
+}
+
+.header::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background: rgba(10, 10, 10, 0.95);
+   backdrop-filter: blur(20px);
+   border: 1px solid rgba(255, 255, 255, 0.12);
+   border-radius: 24px;
+   /* заокруглення тільки зверху */
+   box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.4);
+   z-index: -1;
+}
+
+.nav {
+   position: relative;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 1600px;
+   margin: 0 auto;
+   padding: 20px 60px;
+   color: white;
+}
+
+.logo {
+   font-size: 24px;
+   font-weight: 700;
+   letter-spacing: -1px;
+}
+
+.navLinks {
+   display: flex;
+   gap: 50px;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+.navLinks a {
+   color: #fff;
+   text-decoration: none;
+   font-size: 16px;
+   transition: opacity 0.25s ease;
+}
+
+.navLinks a:hover {
+   opacity: 0.7;
+}
+
+/* Мобільна версія */
+@media (max-width: 768px) {
+   .nav {
+      flex-direction: column;
+      gap: 18px;
+      padding: 20px 30px;
+   }
+
+   .navLinks {
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+   }
+
+   .header::before {
+      border-radius: 20px 20px 0 0;
+   }
+}
