@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import styles from './Header.module.css'
 
 export default function Header() {
-   const [isVisible, setIsVisible] = useState(false)
+   const [isVisible, setIsVisible] = useState(true)
    const [lastScrollTop, setLastScrollTop] = useState(0)
 
    useEffect(() => {

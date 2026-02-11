@@ -24,7 +24,7 @@
    inset: 0;
    background: rgba(10, 10, 10, 0.95);
    backdrop-filter: blur(20px);
-   border: 1px solid rgba(255, 255, 255, 0.12);
+   border: 1px solid rgba(255, 255, 255, 0.5);
    border-radius: 24px;
    /* заокруглення тільки зверху */
    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.4);

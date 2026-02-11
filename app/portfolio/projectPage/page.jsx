@@ -112,7 +112,7 @@ export default function PortfolioCase() {
          letterSpacing: '-0.02em',
       },
       content: {
-         maxWidth: '1280px',
+         maxWidth: '98vw',
          margin: '0 auto',
          padding: '80px 24px'
       },
